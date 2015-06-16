@@ -61,11 +61,11 @@ def draw_calendar(start_date, end_date, options={})
       d = date + i
       d.day.to_s.center(w, (d == Date.today) ? "-" : " ") 
     end
-    if ((date + 6).month != (date - 1).month)
+    if (date + 6).month != (date - 1).month
       month = (date + 7).mname[0, wleft - 2].ljust(wleft - 2)
       month = " #{month} "
       current_line_sep = line_sep_btw_months
-    elsif (date.month != (date - 8).month)
+    elsif date.month != (date - 8).month
       month = "#{date.month} / #{date.year}".ljust(wleft - 2)
       month = " #{month} "
       current_line_sep = line_sep_in_month
